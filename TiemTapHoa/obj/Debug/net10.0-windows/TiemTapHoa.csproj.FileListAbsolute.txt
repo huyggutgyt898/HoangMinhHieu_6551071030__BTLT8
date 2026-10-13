@@ -198,3 +198,4 @@ D:\Subject\visual programming\BTtuan8\TiemTapHoa\bin\Debug\net10.0-windows\runti
 D:\Subject\visual programming\BTtuan8\TiemTapHoa\bin\Debug\net10.0-windows\runtimes\win\lib\net6.0\System.Data.OleDb.dll
 D:\Subject\visual programming\BTtuan8\TiemTapHoa\bin\Debug\net10.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Subject\visual programming\BTtuan8\TiemTapHoa\bin\Debug\net10.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Subject\visual programming\BTtuan8\TiemTapHoa\obj\Debug\net10.0-windows\TiemTapHoa.sourcelink.json

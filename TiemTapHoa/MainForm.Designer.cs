@@ -48,6 +48,14 @@
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
             dgvHangHoa = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewCheckBoxColumn();
             btnThem = new Button();
             btnSua = new Button();
             btnXoa = new Button();
@@ -58,14 +66,6 @@
             btnXuatExcelTonKho = new Button();
             lblTrangThai = new StatusStrip();
             timerTimKiem = new System.Windows.Forms.Timer(components);
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)numGiaBan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numSoLuongTon).BeginInit();
             groupBox1.SuspendLayout();
@@ -100,6 +100,7 @@
             // numGiaBan
             // 
             numGiaBan.Location = new Point(118, 222);
+            numGiaBan.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numGiaBan.Name = "numGiaBan";
             numGiaBan.Size = new Size(150, 27);
             numGiaBan.TabIndex = 3;
@@ -107,6 +108,7 @@
             // numSoLuongTon
             // 
             numSoLuongTon.Location = new Point(542, 87);
+            numSoLuongTon.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numSoLuongTon.Name = "numSoLuongTon";
             numSoLuongTon.Size = new Size(162, 27);
             numSoLuongTon.TabIndex = 4;
@@ -194,6 +196,7 @@
             cboLocLoai.Size = new Size(260, 28);
             cboLocLoai.TabIndex = 16;
             cboLocLoai.Text = "Tất cả các loại";
+            cboLocLoai.Click += cboLocLoai_SelectedIndexChanged;
             // 
             // chkLocKinhDoanh
             // 
@@ -204,6 +207,7 @@
             chkLocKinhDoanh.TabIndex = 18;
             chkLocKinhDoanh.Text = "Chỉ hiển hàng còn kinh doanh";
             chkLocKinhDoanh.UseVisualStyleBackColor = true;
+            chkLocKinhDoanh.Click += chkLocKinhDoanh_CheckedChanged;
             // 
             // txtTimKiem
             // 
@@ -212,6 +216,7 @@
             txtTimKiem.Size = new Size(260, 27);
             txtTimKiem.TabIndex = 19;
             txtTimKiem.Text = "Nước";
+            txtTimKiem.Click += txtTimKiem_TextChanged;
             // 
             // groupBox1
             // 
@@ -257,91 +262,6 @@
             dgvHangHoa.Size = new Size(1122, 272);
             dgvHangHoa.TabIndex = 22;
             dgvHangHoa.CellContentClick += dgvHangHoa_CellContentClick;
-            // 
-            // btnThem
-            // 
-            btnThem.Location = new Point(35, 675);
-            btnThem.Name = "btnThem";
-            btnThem.Size = new Size(78, 29);
-            btnThem.TabIndex = 23;
-            btnThem.Text = "Thêm";
-            btnThem.UseVisualStyleBackColor = true;
-            // 
-            // btnSua
-            // 
-            btnSua.Location = new Point(140, 675);
-            btnSua.Name = "btnSua";
-            btnSua.Size = new Size(72, 29);
-            btnSua.TabIndex = 24;
-            btnSua.Text = "Sửa";
-            btnSua.UseVisualStyleBackColor = true;
-            // 
-            // btnXoa
-            // 
-            btnXoa.Location = new Point(245, 675);
-            btnXoa.Name = "btnXoa";
-            btnXoa.Size = new Size(76, 29);
-            btnXoa.TabIndex = 25;
-            btnXoa.Text = "Xóa";
-            btnXoa.UseVisualStyleBackColor = true;
-            // 
-            // btnLamMoi
-            // 
-            btnLamMoi.Location = new Point(355, 675);
-            btnLamMoi.Name = "btnLamMoi";
-            btnLamMoi.Size = new Size(91, 29);
-            btnLamMoi.TabIndex = 26;
-            btnLamMoi.Text = "Làm mới";
-            btnLamMoi.UseVisualStyleBackColor = true;
-            // 
-            // btnXuatPDF
-            // 
-            btnXuatPDF.Location = new Point(695, 675);
-            btnXuatPDF.Name = "btnXuatPDF";
-            btnXuatPDF.Size = new Size(85, 29);
-            btnXuatPDF.TabIndex = 27;
-            btnXuatPDF.Text = "Xuất PDF";
-            btnXuatPDF.UseVisualStyleBackColor = true;
-            // 
-            // btnXemBangGia
-            // 
-            btnXemBangGia.Location = new Point(554, 675);
-            btnXemBangGia.Name = "btnXemBangGia";
-            btnXemBangGia.Size = new Size(116, 29);
-            btnXemBangGia.TabIndex = 28;
-            btnXemBangGia.Text = "Xem bảng giá";
-            btnXemBangGia.UseVisualStyleBackColor = true;
-            // 
-            // btnXuatExcelLuoi
-            // 
-            btnXuatExcelLuoi.Location = new Point(800, 675);
-            btnXuatExcelLuoi.Name = "btnXuatExcelLuoi";
-            btnXuatExcelLuoi.Size = new Size(94, 29);
-            btnXuatExcelLuoi.TabIndex = 29;
-            btnXuatExcelLuoi.Text = "Xuất excel";
-            btnXuatExcelLuoi.UseVisualStyleBackColor = true;
-            // 
-            // btnXuatExcelTonKho
-            // 
-            btnXuatExcelTonKho.Location = new Point(920, 675);
-            btnXuatExcelTonKho.Name = "btnXuatExcelTonKho";
-            btnXuatExcelTonKho.Size = new Size(143, 29);
-            btnXuatExcelTonKho.TabIndex = 30;
-            btnXuatExcelTonKho.Text = "Xuất excel tồn kho";
-            btnXuatExcelTonKho.UseVisualStyleBackColor = true;
-            // 
-            // lblTrangThai
-            // 
-            lblTrangThai.ImageScalingSize = new Size(20, 20);
-            lblTrangThai.Location = new Point(0, 755);
-            lblTrangThai.Name = "lblTrangThai";
-            lblTrangThai.Size = new Size(1152, 22);
-            lblTrangThai.TabIndex = 31;
-            lblTrangThai.Text = "Tìm thấy n mặt hàng";
-            // 
-            // timerTimKiem
-            // 
-            timerTimKiem.Interval = 350;
             // 
             // Column1
             // 
@@ -406,6 +326,99 @@
             Column8.MinimumWidth = 6;
             Column8.Name = "Column8";
             Column8.Width = 80;
+            // 
+            // btnThem
+            // 
+            btnThem.Location = new Point(35, 675);
+            btnThem.Name = "btnThem";
+            btnThem.Size = new Size(78, 29);
+            btnThem.TabIndex = 23;
+            btnThem.Text = "Thêm";
+            btnThem.UseVisualStyleBackColor = true;
+            btnThem.Click += btnThem_Click;
+            // 
+            // btnSua
+            // 
+            btnSua.Location = new Point(140, 675);
+            btnSua.Name = "btnSua";
+            btnSua.Size = new Size(72, 29);
+            btnSua.TabIndex = 24;
+            btnSua.Text = "Sửa";
+            btnSua.UseVisualStyleBackColor = true;
+            btnSua.Click += btnSua_Click;
+            // 
+            // btnXoa
+            // 
+            btnXoa.Location = new Point(245, 675);
+            btnXoa.Name = "btnXoa";
+            btnXoa.Size = new Size(76, 29);
+            btnXoa.TabIndex = 25;
+            btnXoa.Text = "Xóa";
+            btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.Click += btnXoa_Click;
+            // 
+            // btnLamMoi
+            // 
+            btnLamMoi.Location = new Point(355, 675);
+            btnLamMoi.Name = "btnLamMoi";
+            btnLamMoi.Size = new Size(91, 29);
+            btnLamMoi.TabIndex = 26;
+            btnLamMoi.Text = "Làm mới";
+            btnLamMoi.UseVisualStyleBackColor = true;
+            btnLamMoi.Click += btnLamMoi_Click;
+            // 
+            // btnXuatPDF
+            // 
+            btnXuatPDF.Location = new Point(695, 675);
+            btnXuatPDF.Name = "btnXuatPDF";
+            btnXuatPDF.Size = new Size(85, 29);
+            btnXuatPDF.TabIndex = 27;
+            btnXuatPDF.Text = "Xuất PDF";
+            btnXuatPDF.UseVisualStyleBackColor = true;
+            btnXuatPDF.Click += btnXuatPDF_Click_1;
+            // 
+            // btnXemBangGia
+            // 
+            btnXemBangGia.Location = new Point(554, 675);
+            btnXemBangGia.Name = "btnXemBangGia";
+            btnXemBangGia.Size = new Size(116, 29);
+            btnXemBangGia.TabIndex = 28;
+            btnXemBangGia.Text = "Xem bảng giá";
+            btnXemBangGia.UseVisualStyleBackColor = true;
+            btnXemBangGia.Click += btnXemBangGia_Click_1;
+            // 
+            // btnXuatExcelLuoi
+            // 
+            btnXuatExcelLuoi.Location = new Point(800, 675);
+            btnXuatExcelLuoi.Name = "btnXuatExcelLuoi";
+            btnXuatExcelLuoi.Size = new Size(94, 29);
+            btnXuatExcelLuoi.TabIndex = 29;
+            btnXuatExcelLuoi.Text = "Xuất excel";
+            btnXuatExcelLuoi.UseVisualStyleBackColor = true;
+            btnXuatExcelLuoi.Click += btnXuatExcelLuoi_Click_1;
+            // 
+            // btnXuatExcelTonKho
+            // 
+            btnXuatExcelTonKho.Location = new Point(920, 675);
+            btnXuatExcelTonKho.Name = "btnXuatExcelTonKho";
+            btnXuatExcelTonKho.Size = new Size(143, 29);
+            btnXuatExcelTonKho.TabIndex = 30;
+            btnXuatExcelTonKho.Text = "Xuất excel tồn kho";
+            btnXuatExcelTonKho.UseVisualStyleBackColor = true;
+            btnXuatExcelTonKho.Click += btnXuatExcelTonKho_Click_1;
+            // 
+            // lblTrangThai
+            // 
+            lblTrangThai.ImageScalingSize = new Size(20, 20);
+            lblTrangThai.Location = new Point(0, 755);
+            lblTrangThai.Name = "lblTrangThai";
+            lblTrangThai.Size = new Size(1152, 22);
+            lblTrangThai.TabIndex = 31;
+            lblTrangThai.Text = "Tìm thấy n mặt hàng";
+            // 
+            // timerTimKiem
+            // 
+            timerTimKiem.Interval = 350;
             // 
             // MainForm
             // 
